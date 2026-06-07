@@ -51,12 +51,12 @@ messages = [
         ],
     },
 ]
-
+print(processor.chat_template)
 # apply_chat_template 会将结构化 content 展开为带 <|vision_start|><|image_pad|><|vision_end|> 的文本
 text = processor.apply_chat_template(
     messages,
     tokenize=False,
-    add_generation_prompt=True,
+    add_generation_prompt=True,# 会在末尾添加 <|im_start|>assistant\n
 )
 
 print("=" * 50)
